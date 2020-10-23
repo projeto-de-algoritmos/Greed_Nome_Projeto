@@ -36,8 +36,9 @@ def populate_schedules_bus_routes():
                     )
                 ):
                     data_archive.writelines(
-                        schedules_data["duracaoMedia"]
+                        str(schedules_data["duracaoMedia"])
                     )
+                    data_archive.close()
 
                     data = ""
                     for schedule_data in schedules_data["horarios"]:
@@ -51,12 +52,13 @@ def populate_schedules_bus_routes():
                                 data_archive_path + bus_route_id + ".txt", 'r'
                             )
                             data = data_archive.readlines()
-                            data.append(',' + schedule_data['horario'])
+                            data.append(',' + str(schedule_data["horario"]))
 
                             data_archive = open(
                                 data_archive_path + bus_route_id + ".txt", 'w'
                             )
                             data_archive.writelines(data)
+                            data_archive.close()
 
 
 def populate_bus_routes_id():
@@ -70,19 +72,25 @@ def populate_bus_routes_id():
 
         i = 0
         for bus_route in response:
-            if bus_route["numero"]:
+            if (
+                bus_route["numero"] and (
+                    bus_route["sentido"] == "CIRCULAR" or
+                    bus_route["sentido"] == "IDA"
+                )
+            ):
                 bus_route_id = bus_route["numero"]
 
                 if i == 0:
                     i = 1
                     data = bus_route_id
-                    bus_route_id[path] = [bus_route_id]
+                    bus_routes_id[path] = [bus_route_id]
                 else:
-                    data = data + "," + bus_route_id
-                    bus_route_id[path].append(bus_route_id)
+                    data = data + ',' + bus_route_id
+                    bus_routes_id[path].append(bus_route_id)
 
         data_archive = open("./database/bus_routes_id/" + path + ".txt", 'w')
         data_archive.writelines(data)
+        data_archive.close()
 
 
 def popula_database():

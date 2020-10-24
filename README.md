@@ -23,12 +23,14 @@ As linhas de ônibus, os seus horários de partida e a sua duração média de p
 
 ## Screenshots
 
-### 
+### Página Inicial
+![Página Inicial](./static/screenshot_home.png)
 
+### Página Resultado
+![Página Resultado](./static/screenshot_result.png)
 
-###
-
-
+### Banco de Dados
+![Banco de Dados](./static/screenshot_database.png)
 
 ## Instalação 
 **Linguagem**: Python3<br>

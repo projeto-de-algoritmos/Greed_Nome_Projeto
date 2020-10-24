@@ -1,0 +1,47 @@
+<head>
+    <title>nBus</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+
+    <style>
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+      h2.subtitle {
+        color: green;
+        text-align: center;
+        padding: 1%;
+      }
+      h4.subtitle {
+        color: gray;
+        text-align: center;
+        padding-bottom: 2%;
+      }
+      .form-inline {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      h5 {
+        color: green;
+        text-align: center;
+        padding: 1%;
+      }
+    </style>
+</head>
+<body>
+  <img src="{{ url_for('static', filename='logo.png') }}" width="352" height="200"/>
+  
+  <h2 class="subtitle">
+    Quantos ônibus são necessários para atender as rotas entre uma cidade e a Rodoviária do <b>Plano Piloto</b>?
+  </h2>
+  <h4 class="subtitle">Respeitando os horários de partida e duração média definidos pelo DFTrans</h3>
+  <h5><b>São necessários {{ data }} ônibus.</b></h6>
+</body>

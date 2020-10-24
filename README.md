@@ -32,6 +32,11 @@ As linhas de ônibus, os seus horários de partida e a sua duração média de p
 ### Banco de Dados
 ![Banco de Dados](./static/screenshot_database.png)
 
+### Vídeo
+![Vídeo](./static/video.gif)
+
+**[Video MP4](./static/video.mp4)**
+
 ## Instalação 
 **Linguagem**: Python3<br>
 

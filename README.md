@@ -65,7 +65,7 @@ make run
 ```
 
 ## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+Um [script](./script/create_populate_database.py) foi utilizado para a coleta dos dados. 
 
 
 
